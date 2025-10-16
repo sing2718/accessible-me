@@ -1,18 +1,18 @@
-body {
-  font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+
+
+html, body {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  background-color: #f2f4f7;   
+  color: #111;                 
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
 }
+
 
 .container {
   max-width: 1080px;
@@ -20,9 +20,21 @@ h6 {
   padding: 0 1rem;
 }
 
-img {
-  width: 100%;
+
+img { width: 100%;  }
+
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #000;
+  color: #fff;
+  padding: .75rem 1rem;
+  z-index: 1000;
 }
+.skip-link:focus { left: 1rem; }  
+
 
 .main-nav ul {
   list-style: none;
@@ -32,17 +44,37 @@ img {
   padding: 0;
 }
 
-.main-nav ul li {
-  flex: 1;
-  text-align: center;
-}
+.main-nav ul li { flex: 1; text-align: center; }
+
 
 .main-nav ul li a {
   display: block;
-  color: inherit;
+  color: #0047d6;             
   text-decoration: none;
   font-size: 1.25rem;
+  padding: .6rem;
+  border-radius: .25rem;
+  border: 2px solid transparent;
 }
+
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+  background: #0047d6;
+  color: #fff;
+  outline: none;
+}
+
+.main-nav ul li a:focus-visible {
+  outline: 3px solid #0047d6;
+  outline-offset: 2px;
+}
+
+.main-nav ul li a[aria-current="page"] { font-weight: 700; }
+
+
+form .form-field { margin-bottom: 1rem; }
+
+form label { display: inline-block; margin-bottom: .25rem; font-weight: 600; }
 
 form input,
 form textarea {
@@ -53,19 +85,27 @@ form textarea {
 }
 
 form textarea {
-  min-height: 150px;
-  max-height: 150px;
-  height: 150px;
-  resize: none;
+  height: 150px;    
+  resize: vertical;   
 }
+
 
 form button {
-  background: none;
-  border: 2px solid black;
+  background: #000;           
+  color: #fff;
+  border: 2px solid #000;
   padding: 1rem;
-  text-transform: uppercase;
+  border-radius: .25rem;
+  cursor: pointer;
 }
 
-.site-footer {
-  padding: 2rem 0;
+form button:hover {
+  background: #333;
+  outline: none;
 }
+
+
+.site-footer { padding: 2rem 0; border-top: 1px solid #ddd; }
+
+
+.banner { margin-top: 1rem; }
